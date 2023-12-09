@@ -9,9 +9,7 @@ def test_generate_steps():
     Tests the generate_steps endpoint.
     """
     # Get testing url
-    url = os.getenv("TEST_URL")
-    if url is None:
-        url = "http://iproject4-flask.azurewebsites.net"
+    url = "http://iproject4-flask.azurewebsites.net"
     body = {"query": "My dishwasher is broken, what should I do?"}
     # Make request
     response = requests.post(url, json=body)
@@ -24,9 +22,7 @@ def test_health():
     Tests the health endpoint.
     """
     # Get testing url
-    url = os.getenv("TEST_URL")
-    if url is None:
-        url = "http://iproject4-flask.azurewebsites.net"
+    url = "http://iproject4-flask.azurewebsites.net"
     url += "/example"
     # Make request
     response = requests.get(url)
