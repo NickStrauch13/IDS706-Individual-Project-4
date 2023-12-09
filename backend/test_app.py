@@ -10,6 +10,8 @@ def test_generate_steps():
     """
     # Get testing url
     url = os.getenv("TEST_URL")
+    if url is None:
+        url = "http://iproject4-flask.azurewebsites.net"
     body = {"query": "My dishwasher is broken, what should I do?"}
     # Make request
     response = requests.post(url, json=body)
@@ -23,6 +25,8 @@ def test_health():
     """
     # Get testing url
     url = os.getenv("TEST_URL")
+    if url is None:
+        url = "http://iproject4-flask.azurewebsites.net"
     url += "/example"
     # Make request
     response = requests.get(url)
