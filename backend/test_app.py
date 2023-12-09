@@ -10,6 +10,7 @@ def test_generate_steps():
     """
     # Get testing url
     url = "http://iproject4-flask.azurewebsites.net"
+    url += "/generate_steps"
     body = {"query": "My dishwasher is broken, what should I do?"}
     # Make request
     response = requests.post(url, json=body)
