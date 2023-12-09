@@ -1,20 +1,13 @@
-# Use an official Node runtime as a parent image
-FROM node:20.9.0
-
-# Set the working directory in the container
-WORKDIR /usr/src/app
-
-# Copy package.json and package-lock.json
-COPY package*.json ./
-
-# Install app dependencies
+# Stage 1: Build the React application
+FROM node:20.9.0 as build
+WORKDIR /app
+COPY package.json .
 RUN npm install
-
-# Bundle app source
 COPY . .
+RUN npm run build
 
-# Expose port 3000
-EXPOSE 3000
-
-# Start the app
-CMD ["npm", "start"]
+# Stage 2: Serve the application from Nginx
+FROM nginx:alpine
+COPY --from=build /app/build /usr/share/nginx/html
+EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]
