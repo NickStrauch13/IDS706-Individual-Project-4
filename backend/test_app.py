@@ -1,4 +1,4 @@
-from backend.combined_yt_gpt import main_combined, get_difficulty_and_time
+from combined_yt_gpt import main_combined, get_difficulty_and_time
 
 
 def test_main_combined():
