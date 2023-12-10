@@ -2,6 +2,8 @@
 # IDS706-Individual-Project-4
 
 ## Fix-It: The LLM Powered Home Repair Assistant
+Watch the video walkthrough [here](https://youtu.be/n6USH_QwT1k).
+
 This project is a home repair assistant that utilizes ChatGPT 3.5 Turbo alongside Retrieval Augmented Generation (RAG) to provide a an interface for users to ask questions about home repair. Fix-It aims to improve two of the most common sources of home repair information: YouTube and ChatGPT. By using RAG, Fix-It is able to provide more specific answers to questions than ChatGPT alone. Additionally, Fix-It is able to provide answers more efficiently than YouTube videos, which are often long drawn-out. Fix-It is able to provide answers to questions such as "How do I fix a leaky faucet?" or "How do I fix a broken window?", giving the user a step-by-step guide to fixing the problem, a difficulty rating, youtube tutorial, and more.
 
 The project is built using a Flask server for the backend and a React frontend. The project is [deployed](https://fixit-ai.azurewebsites.net) on Azure, and has auto-scaling capabilites.
